@@ -139,7 +139,7 @@ public sealed partial class GameCanvas : Control
             Engine.Resume();
             return;
         }
-        Input.OnKeyDown(e.Key);
+        Input.OnKeyDown(e.Key, e.PhysicalKey);
     }
 
     /// <summary>The pocket computer: open it in a shaft, or put it away.</summary>
@@ -151,7 +151,7 @@ public sealed partial class GameCanvas : Control
 
     protected override void OnKeyUp(KeyEventArgs e)
     {
-        Input.OnKeyUp(e.Key);
+        Input.OnKeyUp(e.Key, e.PhysicalKey);
         e.Handled = true;
     }
 
